@@ -1,13 +1,19 @@
+/**
+ * @Auteur Philippe Nyamba
+ * @Date 2017-10-09
+ * Demarre l'application
+ */
 public class Application {
-    /**
-     * Demarre l'application
-     */
+
     public static void main(String[] args) {
         new Application();
     }
 
+    /**
+     * Lie le modele à la vue
+     */
     public Application(){
         Modele modele = new Modele();
-        Vue vue = new Vue(modele);
+        new Vue(modele);
     }
 }

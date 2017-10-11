@@ -1,42 +1,14 @@
 import java.util.List;
 
-public class Calculateur {
+/**
+ * @Auteur Philippe Nyamba
+ * @Date 2017-10-09
+ */
+public interface Calculateur {
     /**
-     * Calcule la variance d'une liste de données
+     * Calcule la corrélation à partir d'une liste de couples de valeurs
+     * @param listes liste de couples de valeurs
+     * @return le paramètre permettant de définir la corrélation
      */
-    public double calculerVariance(List<List<String>> listes){
-        double variance = 0.0;
-        int nombreDeValeurs=0;
-        double moyenne = calculerMoyenne(listes);
-        for(List<String> liste : listes) {
-            for (String valeur : liste) {
-                variance += Math.pow((Double.parseDouble(valeur) - moyenne), 2);
-                nombreDeValeurs++;
-            }
-        }
-        return variance / (nombreDeValeurs - 1);
-    }
-
-    /**
-     * Calcule la variance d'une liste de données
-     * @param liste
-     */
-    public double calculerMoyenne(List<List<String>> listes){
-        double moyenne = 0.0;
-        int nombreDeValeurs=0;
-        for(List<String> liste : listes) {
-            for (String valeur: liste) {
-                moyenne += Double.parseDouble(valeur);
-                nombreDeValeurs++;
-        }}
-        return moyenne / nombreDeValeurs;
-    }
-
-    /**
-     * Calcule la variance d'une liste de données
-     * @param listes
-     */
-    public double calculerEcartType(List<List<String>> listes){
-        return Math.sqrt(calculerVariance(listes));
-    }
+    public double calculer(List<List<String>> listes);
 }
